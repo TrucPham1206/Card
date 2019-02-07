@@ -13,6 +13,7 @@ public class Card {
     {
         Scanner input = new Scanner (System.in);
         boolean result = false;
+	boolean result1 = false;
     
         CardBase[] magicHand = new CardBase[7];
         CardBase c = new CardBase();
@@ -29,8 +30,8 @@ public class Card {
         }
        
         CardBase luckyCard = new CardBase();   
-        luckyCard.setValue(12);
-        luckyCard.setSuit("heart");
+        luckyCard.setValue(7);
+        luckyCard.setSuit("Diamonds");
     
         
        System.out.print("Please input card number (Note: Ace=1,Jack=11, Queen=12, King=13): ");    
@@ -42,20 +43,34 @@ public class Card {
       
         for(int i=0; i<magicHand.length; i++){
             if (  inputValue == c.getValue()&& inputSuit.equals(c.getSuit())){
-               result = true;       
-            }
-            else{
-               result = false;
+               result = true; 
+               break;
             }
             
         }
         
-        if (result == true){
+        if (result){
             System.out.println("Your Card is found");
             
         }
         else{
             System.out.println("Your Card is not found");          
+        }
+		
+	for(int i=0; i<magicHand.length; i++){
+            if (  inputValue == luckyCard.getValue()&& inputSuit.equals(luckyCard.getSuit())){
+               result1 = true; 
+               break;
+            }
+            
+        }
+        
+        if (result1){
+            System.out.println("You win the Lucky Card");
+            
+        }
+        else{
+            System.out.println(" ");          
         }
     
 		    
